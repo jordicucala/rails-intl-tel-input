@@ -1,14 +1,15 @@
 //= require intlTelInput/intlTelInput
 //= require intlTelInput/utils
 
-$(function() {
+$(function () {
     $('[data-intl-tel-input]').each(function () {
         var element = $(this);
-        var hidden = element.parent().siblings('.international_phone_number');
+        var hidden = element.parent().find('.international_phone_number');
         element.intlTelInput(element.data('intl-tel-input') || {});
 
         element.closest('form').submit(function () {
-            hidden.val(element.intlTelInput('getNumber').replace(/(.*\+)(.*?)(?=\+)/g));
+            var match = element.intlTelInput('getNumber').match(/(\+\d+)(?=)/g);
+            hidden.val(match[match.length - 1]);
         });
     });
 });
