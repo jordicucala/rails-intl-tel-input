@@ -93,7 +93,6 @@
             // Note: to target Android Mobiles (and not Tablets), we must find "Android" and "Mobile"
             this.isMobile = /Android.+Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             if (this.isMobile) {
-                console.log("mobile")
                /* // trigger the mobile dropdown css
                 $("body").addClass("iti-mobile");
                 // on mobile, we want a full screen dropdown, so we must append it to the body
